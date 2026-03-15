@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="main-layout">
+            <div class="game-container">
+                <h1>Rock Paper Scissors</h1>
+
+                <div class="buttons">
+                    <button id="rock">🪨</button>
+                    <button id="paper">📄</button>
+                    <button id="scissors">✂️</button>
+                </div>
+
+                <div class="battle-arena">
+                    <div class="player-slot">
+                        <h3>YOU</h3>
+                        <div id="user-display" class="hand-icon">❓</div>
+                        <p id="user-text">...</p>
+                    </div>
+
+                    <div class="vs-divider">VS</div>
+
+                    <div class="player-slot">
+                        <h3>COMPUTER</h3>
+                        <div id="computer-display" class="hand-icon">❓</div>
+                        <p id="computer-text">...</p>
+                    </div>
+                </div>
+
+                <div id="results">
+                    <p id="round-msg">Choose your weapon to start the game!</p>
+                    <p>Your Score: <span id="human-score">0</span></p>
+                    <p>Computer Score: <span id="computer-score">0</span></p>
+                </div>
+
+                <button id="reset" style="display:none; background: #bdb2ff;">Play Again?</button>
+            </div>
+
+            <div id="history-log" style="margin-top: 20px; font-size: 0.9rem; color: #555555;">
+                <h3>Match History</h3>
+                <div id="win-rate-box">Win Rate: <span id="win-rate">0%</span><br>
+                    
+                    <span id="match-total" style="font-size: 0.8rem;">Total Matches: 0</span>
+                </div>
+                
+                <ul id="history-list" style="list-style: none; padding: 0;"></ul>
+                
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+                <div class="about-dev">
+                    <p style="font-weight: bold; margin-bottom: 5px;">About the Dev ✨</p>
+                    <p style="font-size: 0.8rem; line-height: 1.4; color: #666;">
+                        Built by <strong>Kimberly Ali</strong> an aspiring Data Scientist.
+                        <br><br>
+                        This project uses pattern-recognition logic to predict player behaviour.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="rps-game.js"></script>
+    </body>
+</html>

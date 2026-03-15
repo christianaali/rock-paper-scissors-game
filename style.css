@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box; /* This forces padding to be included in the width */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', 'Franklin Gothic Medium', 'Monserrat', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    min-height: 100vh;
+    background-color:#5b94da;
+    overflow-x: hidden; /* This stops the page from sliding side-to-side */
+}
+
+.main-layout { /* Outer Wrapper */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* for desktop */
+    justify-content: center;
+    width: 95%;
+    max-width: 900px;
+}
+
+.game-container {
+    background: white;
+    padding: 1.5rem; /* Tighter padding for mobile */
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    justify-content: center;
+    width: 95%; /* Take up most of the screen */
+    max-width: 550px; /* But don't get wider than 550px on desktop */
+    margin: 10px auto; /* Center it */
+    min-height: auto; /* Let it shrink to fit the content */
+}
+
+#history-log {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 300px;
+    max-height: 60vh; /* Limits the height */
+    overflow-y: auto; /* Adds scrollbar when it gets too long */
+}
+
+#win-rate-box {
+    background: #e0f7fa;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #006064;
+}
+
+#win-rate {
+    transition: all 0.5s ease-out;
+    display: inline-block;
+}
+
+#history-list li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes shake {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-20px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.shaking {
+    animation: shake 0.5s ease-in-out;
+}
+
+.battle-arena {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    background: #f0f4f8;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.player-slot {
+    flex: 1;
+    text-align: center;
+}
+
+.hand-icon {
+    font-size: 4rem;
+    margin: 10px 0;
+    transition: transform 0.2s;
+}
+
+.vs-divider {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #888888;
+    padding: 0 10px;
+}
+
+/* Media */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    #history-log {
+        width: 100%;
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-layout {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .hand-icon {
+        font-size: 2.5rem; /* Smaller icons save a lot of space */
+    }
+}     
